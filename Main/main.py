@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap # pylint: disable=import-error
 from flask_wtf import FlaskForm # pylint: disable=import-error
 from wtforms.fields import StringField, PasswordField, SubmitField # pylint: disable=import-error
 from wtforms.validators import DataRequired # pylint: disable=import-error
+import unittest # pylint: disable=import-error
 
 
 app = Flask(__name__)
@@ -16,6 +17,11 @@ class LoginForm(FlaskForm):
     username = StringField('Nombre de usuario', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Enviar')
+
+@app.cli.command()
+def test():
+    tests = unittest.TestLoader().discover('tests')
+    unittest.TextTestRunner().run(tests)
 
 @app.errorhandler(404)
 def not_found(error):
