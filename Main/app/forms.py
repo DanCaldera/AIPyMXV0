@@ -1,6 +1,6 @@
-from flask_wtf import FlaskForm
-from wtforms.fields import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired
+from flask_wtf import FlaskForm # pylint: disable=import-error
+from wtforms.fields import StringField, PasswordField, SubmitField # pylint: disable=import-error
+from wtforms.validators import DataRequired # pylint: disable=import-error
 
 
 class LoginForm(FlaskForm):
