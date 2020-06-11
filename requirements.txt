@@ -7,4 +7,4 @@ flask-testing==0.8.0
 blinker==1.4
 firebase-admin==3.2.1
 flask-login==0.4.1
-gunicorn
+gunicorn==19.9.0
